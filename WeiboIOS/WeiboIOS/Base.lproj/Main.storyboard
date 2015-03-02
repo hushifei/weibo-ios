@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Kil-AV-16v">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--热门话题-->
+        <scene sceneID="E2B-MF-vVC">
+            <objects>
+                <viewController id="SgO-Ge-fer" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9wh-RW-biB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="热门话题" image="topic" id="YzF-3M-Pcr">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFu-Mr-98G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="632"/>
+        </scene>
+        <!--时间线-->
+        <scene sceneID="lLQ-kv-qcy">
+            <objects>
+                <viewController id="RFp-wR-Hxg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tng-BC-CCA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="时间线" image="timeline" id="Tta-ur-IfZ">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwm-6l-Iof" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="416" y="246"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PSR-FO-dZw">
+            <objects>
+                <tabBarController id="Kil-AV-16v" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="GJO-h4-RdG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="RFp-wR-Hxg" kind="relationship" relationship="viewControllers" id="cyj-93-jsi"/>
+                        <segue destination="SgO-Ge-fer" kind="relationship" relationship="viewControllers" id="ccI-KD-AXw"/>
+                        <segue destination="wKz-6M-fB7" kind="relationship" relationship="viewControllers" id="HpE-xG-u2n"/>
+                        <segue destination="HNm-68-vhh" kind="relationship" relationship="viewControllers" id="vWH-7m-4Gt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWY-JP-jcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546" y="1039"/>
+        </scene>
+        <!--我-->
+        <scene sceneID="eQ1-Q7-LxE">
+            <objects>
+                <viewController id="HNm-68-vhh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eDP-dx-QI2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我" image="me" id="kWc-4O-5Z1">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="IPB-fG-Kfe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvg-YU-OE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="1358"/>
+        </scene>
+        <!--消息-->
+        <scene sceneID="Xlw-ho-rVg">
+            <objects>
+                <viewController id="wKz-6M-fB7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="12w-LK-DGh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="消息" image="message" id="N8b-5x-P8O">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wHb-XK-dPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="1419"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="me" width="25" height="25"/>
+        <image name="message" width="25" height="25"/>
+        <image name="timeline" width="25" height="25"/>
+        <image name="topic" width="25" height="25"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
