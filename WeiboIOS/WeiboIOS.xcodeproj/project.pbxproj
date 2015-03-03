@@ -14,6 +14,10 @@
 		3043169A1AA32DFC00BFC88F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304316991AA32DFC00BFC88F /* Images.xcassets */; };
 		3043169D1AA32DFC00BFC88F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3043169B1AA32DFC00BFC88F /* LaunchScreen.xib */; };
 		304316A91AA32DFC00BFC88F /* WeiboIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 304316A81AA32DFC00BFC88F /* WeiboIOSTests.m */; };
+		305FEC731AA47D3000FA30D5 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305FEC721AA47D3000FA30D5 /* TimelineViewController.m */; };
+		305FECBF1AA492DC00FA30D5 /* WeiboItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305FECBD1AA492DC00FA30D5 /* WeiboItem.xib */; };
+		305FECC51AA4A27100FA30D5 /* WeiboItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 305FECC41AA4A27100FA30D5 /* WeiboItemCell.m */; };
+		3B34B3F211B809BCEE64C534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF33F383ADE3377242F519E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23BB52AAC148BEF50978CDDD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		304316891AA32DFC00BFC88F /* WeiboIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiboIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3043168D1AA32DFC00BFC88F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3043168E1AA32DFC00BFC88F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +45,14 @@
 		304316A21AA32DFC00BFC88F /* WeiboIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		304316A71AA32DFC00BFC88F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		304316A81AA32DFC00BFC88F /* WeiboIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiboIOSTests.m; sourceTree = "<group>"; };
+		305FEC711AA47D3000FA30D5 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		305FEC721AA47D3000FA30D5 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		305FECBD1AA492DC00FA30D5 /* WeiboItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiboItem.xib; sourceTree = "<group>"; };
+		305FECC31AA4A27100FA30D5 /* WeiboItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboItemCell.h; sourceTree = "<group>"; };
+		305FECC41AA4A27100FA30D5 /* WeiboItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboItemCell.m; sourceTree = "<group>"; };
+		307962081AA5E09A00BBF5BD /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		6BF33F383ADE3377242F519E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDF28FF3660D89F40B2C85FE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B34B3F211B809BCEE64C534 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +74,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19B2ECBBC9CC946213E088E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BF33F383ADE3377242F519E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		231817B6081217AF85851E5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDF28FF3660D89F40B2C85FE /* Pods.debug.xcconfig */,
+				23BB52AAC148BEF50978CDDD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		304316801AA32DFC00BFC88F = {
 			isa = PBXGroup;
 			children = (
 				3043168B1AA32DFC00BFC88F /* WeiboIOS */,
 				304316A51AA32DFC00BFC88F /* WeiboIOSTests */,
 				3043168A1AA32DFC00BFC88F /* Products */,
+				231817B6081217AF85851E5A /* Pods */,
+				19B2ECBBC9CC946213E088E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				304316901AA32DFC00BFC88F /* AppDelegate.h */,
+				305FECC31AA4A27100FA30D5 /* WeiboItemCell.h */,
+				305FECC41AA4A27100FA30D5 /* WeiboItemCell.m */,
 				304316911AA32DFC00BFC88F /* AppDelegate.m */,
 				304316931AA32DFC00BFC88F /* ViewController.h */,
 				304316941AA32DFC00BFC88F /* ViewController.m */,
@@ -89,6 +124,10 @@
 				304316991AA32DFC00BFC88F /* Images.xcassets */,
 				3043169B1AA32DFC00BFC88F /* LaunchScreen.xib */,
 				3043168C1AA32DFC00BFC88F /* Supporting Files */,
+				305FEC711AA47D3000FA30D5 /* TimelineViewController.h */,
+				305FEC721AA47D3000FA30D5 /* TimelineViewController.m */,
+				305FECBD1AA492DC00FA30D5 /* WeiboItem.xib */,
+				307962081AA5E09A00BBF5BD /* Config.h */,
 			);
 			path = WeiboIOS;
 			sourceTree = "<group>";
@@ -126,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 304316AC1AA32DFC00BFC88F /* Build configuration list for PBXNativeTarget "WeiboIOS" */;
 			buildPhases = (
+				1D86C960C1595180EB947F33 /* Check Pods Manifest.lock */,
 				304316851AA32DFC00BFC88F /* Sources */,
 				304316861AA32DFC00BFC88F /* Frameworks */,
 				304316871AA32DFC00BFC88F /* Resources */,
+				2757B049B112455704880EDD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305FECBF1AA492DC00FA30D5 /* WeiboItem.xib in Resources */,
 				304316981AA32DFC00BFC88F /* Main.storyboard in Resources */,
 				3043169D1AA32DFC00BFC88F /* LaunchScreen.xib in Resources */,
 				3043169A1AA32DFC00BFC88F /* Images.xcassets in Resources */,
@@ -214,12 +256,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D86C960C1595180EB947F33 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2757B049B112455704880EDD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		304316851AA32DFC00BFC88F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				304316951AA32DFC00BFC88F /* ViewController.m in Sources */,
+				305FEC731AA47D3000FA30D5 /* TimelineViewController.m in Sources */,
+				305FECC51AA4A27100FA30D5 /* WeiboItemCell.m in Sources */,
 				304316921AA32DFC00BFC88F /* AppDelegate.m in Sources */,
 				3043168F1AA32DFC00BFC88F /* main.m in Sources */,
 			);
@@ -341,10 +418,20 @@
 		};
 		304316AD1AA32DFC00BFC88F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF28FF3660D89F40B2C85FE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/zhaoliang/Downloads/WeiboSDK-master/build",
+				);
 				INFOPLIST_FILE = WeiboIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libWeiboSDK",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -352,10 +439,20 @@
 		};
 		304316AE1AA32DFC00BFC88F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23BB52AAC148BEF50978CDDD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/zhaoliang/Downloads/WeiboSDK-master/build",
+				);
 				INFOPLIST_FILE = WeiboIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libWeiboSDK",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
