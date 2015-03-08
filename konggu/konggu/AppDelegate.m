@@ -1,12 +1,15 @@
 //
 //  AppDelegate.m
-//  konggu
+//  kongku
 //
-//  Created by zhaoliang on 15/3/6.
+//  Created by zhaoliang on 15/3/7.
 //  Copyright (c) 2015年 zhaoliang. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "AccountViewController.h"
+#import "StartupViewController.h"
+#import "Account.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +18,20 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    //判断是否进行过授权
+    Account *account = [[Account alloc] initWithArchiever];
+    if (account && [[NSDate date] compare:account.expiresTime]) {
+        //获取登陆用户的信息
+        StartupViewController *startUpViewController = [[StartupViewController alloc] initWithUid:account.uid accessToken:account.accessToken];
+        self.window.rootViewController = startUpViewController;
+    }
+    else{
+        self.window.rootViewController = [[AccountViewController alloc] init];
+    }
     return YES;
 }
 
