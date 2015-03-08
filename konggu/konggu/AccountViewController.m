@@ -8,12 +8,12 @@
 
 #import "AccountViewController.h"
 #import "PureLayout.h"
-#import "AFNetworking.h"
+#import "KGRequestTool.h"
 #import "Account.h"
 
 #define OAUTH_URL           @"https://api.weibo.com/oauth2/authorize"
 #define APP_KEY             @"3609198081"
-#define APP_SECRET          @"**"
+#define APP_SECRET          @"d53262e6f2bfc0a225af66b0e1a7deab"
 #define REDIRECT_URL        @"http://konggu.zhaoliang.info"
 #define ACCESS_TOKEN_URL    @"https://api.weibo.com/oauth2/access_token"
 
@@ -71,21 +71,17 @@
 
 - (void)authWithCode: (NSString *)code
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"client_id"] = APP_KEY;
     param[@"client_secret"] = APP_SECRET;
     param[@"grant_type"] = @"authorization_code";
     param[@"code"] = code;
     param[@"redirect_uri"] = REDIRECT_URL;
-
-    [manager POST:ACCESS_TOKEN_URL parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [KGRequestTool POST:ACCESS_TOKEN_URL parameters:param response:@"plain" success:^(id responseObject) {
         NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         Account *account = [[Account alloc] initWithString:result];
         [account saveAccount];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 }
