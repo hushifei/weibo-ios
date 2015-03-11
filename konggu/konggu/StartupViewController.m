@@ -9,15 +9,15 @@
 #import "StartupViewController.h"
 #import "PureLayout.h"
 #import "KGRequestTool.h"
-#import "PAImageView.h"
 #import "User.h"
 #import "KGMainViewController.h"
+#import "UIImageView+WebCache.h"
 
 #define GET_USER_URL        @"https://api.weibo.com/2/users/show.json"
 
 @interface StartupViewController()
 
-@property(nonatomic, strong) PAImageView *userAvatar;
+@property(nonatomic, strong) UIImageView *userAvatar;
 @property(nonatomic, strong) UILabel *userName;
 @property(nonatomic, assign) BOOL didSetupConstraints;
 
@@ -49,8 +49,14 @@
             
             //UIImage *image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:currentUser.profileImageUrl]]];
             //[self.userAvatar setImage:image];
-            [self.userAvatar setProperty:self.userAvatar.frame backgroundProgresscolor:[UIColor whiteColor] progressColor:[UIColor grayColor] placeholderImage:[UIImage imageNamed:@"tabbar_profile"]];
-            [self.userAvatar setImageURL:currentUser.profileImageUrl];
+            //[self.userAvatar setProperty:self.userAvatar.frame backgroundProgresscolor:[UIColor whiteColor] progressColor:[UIColor grayColor] placeholderImage:[UIImage imageNamed:@"tabbar_profile"]];
+            //[self.userAvatar setImageURL:currentUser.profileImageUrl];
+            [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:currentUser.profileImageUrl] placeholderImage:[UIImage imageNamed:@"tabbar_profile"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL){
+                self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width/2;
+                self.userAvatar.clipsToBounds = YES;
+                self.userAvatar.layer.borderWidth = 3.0f;
+                self.userAvatar.layer.borderColor = [UIColor whiteColor].CGColor;
+            }];
             
             KGMainViewController *mainVC = [[KGMainViewController alloc] initWithStyle];
             [self presentViewController:mainVC.tabbar animated:true completion:^{
@@ -76,10 +82,10 @@
     [super updateViewConstraints];
 }
 
-- (PAImageView *)userAvatar
+- (UIImageView *)userAvatar
 {
     if (!_userAvatar) {
-        _userAvatar = [PAImageView newAutoLayoutView];
+        _userAvatar = [UIImageView newAutoLayoutView];
     }
     return _userAvatar;
 }

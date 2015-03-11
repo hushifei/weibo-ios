@@ -29,16 +29,14 @@
 {
     self.tableView = [UITableView new];
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self initDta];
-    //self.tableView.dataSource = self;
-    //self.tableView.delegate = self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView registerClass:[TabHomeCell class] forCellReuseIdentifier:@"name"];
+    //[self.tableView registerClass:[TabHomeCell class] forCellReuseIdentifier:@"name"];
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
@@ -53,7 +51,9 @@
     [KGRequestTool GET:LIST_TIMELINE_URL parameters:param response:@"json" success:^(id responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *dict = (NSDictionary *)responseObject;
-            for (Status *weibo in [dict arrayValueForKey:@"statuses"]) {
+            for (NSDictionary *status in [dict arrayValueForKey:@"statuses"]) {
+                Status *weibo = [[Status alloc] initWithJsonDictionary:status];
+                NSLog(@"weibo:%@", status);
                 [self.dataArray addObject:weibo];
                 TabHomeCell *cell = [[TabHomeCell alloc] init];
                 [self.cellArray addObject:cell];
@@ -69,12 +69,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.dataArray.count;;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TabHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"name" forIndexPath:indexPath];
+    TabHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"name"];
     if (!cell) {
         cell = [[TabHomeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"name"];
     }
@@ -86,7 +86,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.dataArray.count;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

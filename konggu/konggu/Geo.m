@@ -1,13 +1,13 @@
 //
-//  Status.m
+//  Geo.m
 //  konggu
 //
 //  Created by zhaoliang on 15/3/11.
 //  Copyright (c) 2015年 zhaoliang. All rights reserved.
 //
 
-#import "Status.h"
+#import "Geo.h"
 
-@implementation Status
+@implementation Geo
 
 @end

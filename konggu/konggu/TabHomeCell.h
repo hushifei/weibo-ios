@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PAImageView.h"
 #import "Status.h"
 
 @interface TabHomeCell : UITableViewCell

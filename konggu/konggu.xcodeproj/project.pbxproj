@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		305EA5FD1AABE54B004C8F4C /* PAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305EA5FC1AABE54B004C8F4C /* PAImageView.m */; };
 		305EA6001AABF136004C8F4C /* KGRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 305EA5FF1AABF136004C8F4C /* KGRequestTool.m */; };
 		305EA6071AABFC49004C8F4C /* TabHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305EA6061AABFC49004C8F4C /* TabHomeViewController.m */; };
 		305EA60A1AABFC64004C8F4C /* TabTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305EA6091AABFC64004C8F4C /* TabTrendViewController.m */; };
@@ -21,18 +20,12 @@
 		307DC6C01AAB00820012DC15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307DC6BF1AAB00820012DC15 /* Images.xcassets */; };
 		307DC6C31AAB00820012DC15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307DC6C11AAB00820012DC15 /* LaunchScreen.xib */; };
 		307DC6CF1AAB00820012DC15 /* kongguTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6CE1AAB00820012DC15 /* kongguTests.m */; };
-		307DC6DD1AAB02DB0012DC15 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6DA1AAB02DB0012DC15 /* Account.m */; };
 		307DC6DE1AAB02DB0012DC15 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6DC1AAB02DB0012DC15 /* AccountViewController.m */; };
 		307DC6E21AAB477D0012DC15 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6E11AAB477D0012DC15 /* StartupViewController.m */; };
-		307DC6E61AAB53E20012DC15 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6E51AAB53E20012DC15 /* User.m */; };
-		30AC89241AAC2FE5008C9DA5 /* GeoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC891D1AAC2FE5008C9DA5 /* GeoInfo.m */; };
-		30AC89251AAC2FE5008C9DA5 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC891F1AAC2FE5008C9DA5 /* Status.m */; };
-		30AC89261AAC2FE5008C9DA5 /* StatusImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC89211AAC2FE5008C9DA5 /* StatusImage.m */; };
-		30AC89271AAC2FE5008C9DA5 /* StatusVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC89231AAC2FE5008C9DA5 /* StatusVisible.m */; };
-		30AC89321AAC3036008C9DA5 /* ImageResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC89291AAC3036008C9DA5 /* ImageResourceLoader.m */; };
+		309FE53E1AB07E9100D09517 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FE53D1AB07E9100D09517 /* User.m */; };
+		309FE5411AB0886C00D09517 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FE5401AB0886C00D09517 /* Status.m */; };
+		309FE5441AB08C8A00D09517 /* Geo.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FE5431AB08C8A00D09517 /* Geo.m */; };
 		30AC89331AAC3036008C9DA5 /* NSDictionary+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC892B1AAC3036008C9DA5 /* NSDictionary+Json.m */; };
-		30AC89341AAC3036008C9DA5 /* PathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC892D1AAC3036008C9DA5 /* PathHelper.m */; };
-		30AC89351AAC3036008C9DA5 /* Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC892F1AAC3036008C9DA5 /* Resources.m */; };
 		73F10A01F2D59599B23CE698 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7972E686E30BF6B819A9DCD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +41,6 @@
 
 /* Begin PBXFileReference section */
 		122073ACD04A9F1D805D4641 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		305EA5FB1AABE54B004C8F4C /* PAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAImageView.h; sourceTree = "<group>"; };
-		305EA5FC1AABE54B004C8F4C /* PAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAImageView.m; sourceTree = "<group>"; };
 		305EA5FE1AABF136004C8F4C /* KGRequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGRequestTool.h; sourceTree = "<group>"; };
 		305EA5FF1AABF136004C8F4C /* KGRequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGRequestTool.m; sourceTree = "<group>"; };
 		305EA6051AABFC49004C8F4C /* TabHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabHomeViewController.h; sourceTree = "<group>"; };
@@ -76,30 +67,18 @@
 		307DC6C81AAB00820012DC15 /* kongguTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kongguTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		307DC6CD1AAB00820012DC15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		307DC6CE1AAB00820012DC15 /* kongguTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kongguTests.m; sourceTree = "<group>"; };
-		307DC6D91AAB02DB0012DC15 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		307DC6DA1AAB02DB0012DC15 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		307DC6DB1AAB02DB0012DC15 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		307DC6DC1AAB02DB0012DC15 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		307DC6E01AAB477D0012DC15 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
 		307DC6E11AAB477D0012DC15 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
-		307DC6E41AAB53E20012DC15 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		307DC6E51AAB53E20012DC15 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		30AC891C1AAC2FE5008C9DA5 /* GeoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoInfo.h; sourceTree = "<group>"; };
-		30AC891D1AAC2FE5008C9DA5 /* GeoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoInfo.m; sourceTree = "<group>"; };
-		30AC891E1AAC2FE5008C9DA5 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
-		30AC891F1AAC2FE5008C9DA5 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
-		30AC89201AAC2FE5008C9DA5 /* StatusImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusImage.h; sourceTree = "<group>"; };
-		30AC89211AAC2FE5008C9DA5 /* StatusImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusImage.m; sourceTree = "<group>"; };
-		30AC89221AAC2FE5008C9DA5 /* StatusVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusVisible.h; sourceTree = "<group>"; };
-		30AC89231AAC2FE5008C9DA5 /* StatusVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusVisible.m; sourceTree = "<group>"; };
-		30AC89281AAC3036008C9DA5 /* ImageResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResourceLoader.h; sourceTree = "<group>"; };
-		30AC89291AAC3036008C9DA5 /* ImageResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResourceLoader.m; sourceTree = "<group>"; };
+		309FE53C1AB07E9100D09517 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		309FE53D1AB07E9100D09517 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		309FE53F1AB0886C00D09517 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		309FE5401AB0886C00D09517 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		309FE5421AB08C8A00D09517 /* Geo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geo.h; sourceTree = "<group>"; };
+		309FE5431AB08C8A00D09517 /* Geo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geo.m; sourceTree = "<group>"; };
 		30AC892A1AAC3036008C9DA5 /* NSDictionary+Json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Json.h"; sourceTree = "<group>"; };
 		30AC892B1AAC3036008C9DA5 /* NSDictionary+Json.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Json.m"; sourceTree = "<group>"; };
-		30AC892C1AAC3036008C9DA5 /* PathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathHelper.h; sourceTree = "<group>"; };
-		30AC892D1AAC3036008C9DA5 /* PathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathHelper.m; sourceTree = "<group>"; };
-		30AC892E1AAC3036008C9DA5 /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
-		30AC892F1AAC3036008C9DA5 /* Resources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resources.m; sourceTree = "<group>"; };
 		B7972E686E30BF6B819A9DCD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D471053EB93905251DF6F2F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,23 +111,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		305EA5FA1AABE51A004C8F4C /* Common */ = {
+		305EA5FA1AABE51A004C8F4C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				30AC89281AAC3036008C9DA5 /* ImageResourceLoader.h */,
-				30AC89291AAC3036008C9DA5 /* ImageResourceLoader.m */,
 				30AC892A1AAC3036008C9DA5 /* NSDictionary+Json.h */,
 				30AC892B1AAC3036008C9DA5 /* NSDictionary+Json.m */,
-				30AC892C1AAC3036008C9DA5 /* PathHelper.h */,
-				30AC892D1AAC3036008C9DA5 /* PathHelper.m */,
-				30AC892E1AAC3036008C9DA5 /* Resources.h */,
-				30AC892F1AAC3036008C9DA5 /* Resources.m */,
-				305EA5FB1AABE54B004C8F4C /* PAImageView.h */,
-				305EA5FC1AABE54B004C8F4C /* PAImageView.m */,
 				305EA5FE1AABF136004C8F4C /* KGRequestTool.h */,
 				305EA5FF1AABF136004C8F4C /* KGRequestTool.m */,
 			);
-			name = Common;
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		305EA6011AABF9A9004C8F4C /* Home */ = {
@@ -213,21 +184,19 @@
 			isa = PBXGroup;
 			children = (
 				30AC891B1AAC2EF3008C9DA5 /* Model */,
-				305EA6041AABFBF1004C8F4C /* Me */,
-				305EA6031AABFBE8004C8F4C /* Message */,
-				305EA6021AABFBE1004C8F4C /* Trend */,
-				305EA6011AABF9A9004C8F4C /* Home */,
-				305EA5FA1AABE51A004C8F4C /* Common */,
 				307DC6D81AAB02930012DC15 /* Account */,
+				305EA6011AABF9A9004C8F4C /* Home */,
+				305EA6021AABFBE1004C8F4C /* Trend */,
+				305EA6031AABFBE8004C8F4C /* Message */,
+				305EA6041AABFBF1004C8F4C /* Me */,
+				305EA5FA1AABE51A004C8F4C /* Utils */,
 				307DC6B61AAB00820012DC15 /* AppDelegate.h */,
 				307DC6B71AAB00820012DC15 /* AppDelegate.m */,
-				305EA6141AAC124B004C8F4C /* ViewController.h */,
-				305EA6151AAC124B004C8F4C /* ViewController.m */,
+				305EA6111AAC0DA2004C8F4C /* KGMainViewController.h */,
+				305EA6121AAC0DA2004C8F4C /* KGMainViewController.m */,
 				307DC6BF1AAB00820012DC15 /* Images.xcassets */,
 				307DC6C11AAB00820012DC15 /* LaunchScreen.xib */,
 				307DC6B21AAB00820012DC15 /* Supporting Files */,
-				305EA6111AAC0DA2004C8F4C /* KGMainViewController.h */,
-				305EA6121AAC0DA2004C8F4C /* KGMainViewController.m */,
 			);
 			path = konggu;
 			sourceTree = "<group>";
@@ -235,6 +204,8 @@
 		307DC6B21AAB00820012DC15 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				305EA6141AAC124B004C8F4C /* ViewController.h */,
+				305EA6151AAC124B004C8F4C /* ViewController.m */,
 				307DC6B31AAB00820012DC15 /* Info.plist */,
 				307DC6B41AAB00820012DC15 /* main.m */,
 			);
@@ -272,18 +243,12 @@
 		30AC891B1AAC2EF3008C9DA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				30AC891C1AAC2FE5008C9DA5 /* GeoInfo.h */,
-				30AC891D1AAC2FE5008C9DA5 /* GeoInfo.m */,
-				30AC891E1AAC2FE5008C9DA5 /* Status.h */,
-				30AC891F1AAC2FE5008C9DA5 /* Status.m */,
-				30AC89201AAC2FE5008C9DA5 /* StatusImage.h */,
-				30AC89211AAC2FE5008C9DA5 /* StatusImage.m */,
-				30AC89221AAC2FE5008C9DA5 /* StatusVisible.h */,
-				30AC89231AAC2FE5008C9DA5 /* StatusVisible.m */,
-				307DC6E41AAB53E20012DC15 /* User.h */,
-				307DC6E51AAB53E20012DC15 /* User.m */,
-				307DC6D91AAB02DB0012DC15 /* Account.h */,
-				307DC6DA1AAB02DB0012DC15 /* Account.m */,
+				309FE53C1AB07E9100D09517 /* User.h */,
+				309FE53D1AB07E9100D09517 /* User.m */,
+				309FE53F1AB0886C00D09517 /* Status.h */,
+				309FE5401AB0886C00D09517 /* Status.m */,
+				309FE5421AB08C8A00D09517 /* Geo.h */,
+				309FE5431AB08C8A00D09517 /* Geo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -432,27 +397,20 @@
 			files = (
 				305EA6161AAC124B004C8F4C /* ViewController.m in Sources */,
 				305EA60A1AABFC64004C8F4C /* TabTrendViewController.m in Sources */,
-				30AC89341AAC3036008C9DA5 /* PathHelper.m in Sources */,
 				305EA6131AAC0DA2004C8F4C /* KGMainViewController.m in Sources */,
-				307DC6E61AAB53E20012DC15 /* User.m in Sources */,
-				30AC89251AAC2FE5008C9DA5 /* Status.m in Sources */,
-				307DC6DD1AAB02DB0012DC15 /* Account.m in Sources */,
 				305EA60D1AABFC72004C8F4C /* TabMessageViewController.m in Sources */,
-				30AC89261AAC2FE5008C9DA5 /* StatusImage.m in Sources */,
-				30AC89271AAC2FE5008C9DA5 /* StatusVisible.m in Sources */,
 				307DC6E21AAB477D0012DC15 /* StartupViewController.m in Sources */,
 				307DC6B81AAB00820012DC15 /* AppDelegate.m in Sources */,
 				307DC6B51AAB00820012DC15 /* main.m in Sources */,
 				307DC6DE1AAB02DB0012DC15 /* AccountViewController.m in Sources */,
-				30AC89351AAC3036008C9DA5 /* Resources.m in Sources */,
+				309FE53E1AB07E9100D09517 /* User.m in Sources */,
 				305EA6071AABFC49004C8F4C /* TabHomeViewController.m in Sources */,
 				30AC89331AAC3036008C9DA5 /* NSDictionary+Json.m in Sources */,
-				30AC89241AAC2FE5008C9DA5 /* GeoInfo.m in Sources */,
+				309FE5441AB08C8A00D09517 /* Geo.m in Sources */,
 				305EA6191AAC1F92004C8F4C /* TabHomeCell.m in Sources */,
 				305EA6101AABFC81004C8F4C /* TabMeViewController.m in Sources */,
+				309FE5411AB0886C00D09517 /* Status.m in Sources */,
 				305EA6001AABF136004C8F4C /* KGRequestTool.m in Sources */,
-				30AC89321AAC3036008C9DA5 /* ImageResourceLoader.m in Sources */,
-				305EA5FD1AABE54B004C8F4C /* PAImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
