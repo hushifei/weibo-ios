@@ -55,18 +55,9 @@
         [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor], NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
         [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
         
-        self.tabbar.viewControllers = @[homeVC, trendVC, messageVC, meVC];
+        self.viewControllers = @[homeVC, trendVC, messageVC, meVC];
     }
     return self;
-}
-
-- (UITabBarController *)tabbar
-{
-    if (!_tabbar) {
-        _tabbar = [[UITabBarController alloc] init];
-        
-    }
-    return _tabbar;
 }
 
 @end

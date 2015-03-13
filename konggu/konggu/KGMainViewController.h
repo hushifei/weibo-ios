@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KGMainViewController : UIViewController
-
-@property(nonatomic, strong)UITabBarController *tabbar;
+@interface KGMainViewController : UITabBarController
 
 - (instancetype)initWithStyle;
 

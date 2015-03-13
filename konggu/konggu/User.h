@@ -44,11 +44,11 @@ typedef enum
 @property(nonatomic, assign)BOOL hasFollowedMe;
 @property(nonatomic, assign)BOOL hasFollowed;
 @property(nonatomic, assign)int favouritesCount;
-@property(nonatomic, assign)int statusCount;
+@property(nonatomic, assign)int statusesCount;
 @property(nonatomic, assign)int followersCount;
 @property(nonatomic, assign)int friendsCount;
 @property(nonatomic, assign)int biFollowersCount;
-@property(nonatomic, copy)NSString *createTime;
+@property(nonatomic, assign)time_t createTime;
 @property(nonatomic, copy)NSString *location;
 @property(nonatomic, assign)OnlineState online;
 @property(nonatomic, assign)Vertify vertifyType;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3032EF5A1AB1DA0E002DF538 /* KGOperationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032EF591AB1DA0E002DF538 /* KGOperationBar.m */; };
 		305EA6001AABF136004C8F4C /* KGRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 305EA5FF1AABF136004C8F4C /* KGRequestTool.m */; };
 		305EA6071AABFC49004C8F4C /* TabHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305EA6061AABFC49004C8F4C /* TabHomeViewController.m */; };
 		305EA60A1AABFC64004C8F4C /* TabTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305EA6091AABFC64004C8F4C /* TabTrendViewController.m */; };
@@ -21,10 +22,10 @@
 		307DC6C31AAB00820012DC15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307DC6C11AAB00820012DC15 /* LaunchScreen.xib */; };
 		307DC6CF1AAB00820012DC15 /* kongguTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6CE1AAB00820012DC15 /* kongguTests.m */; };
 		307DC6DE1AAB02DB0012DC15 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6DC1AAB02DB0012DC15 /* AccountViewController.m */; };
-		307DC6E21AAB477D0012DC15 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307DC6E11AAB477D0012DC15 /* StartupViewController.m */; };
 		309FE53E1AB07E9100D09517 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FE53D1AB07E9100D09517 /* User.m */; };
 		309FE5411AB0886C00D09517 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FE5401AB0886C00D09517 /* Status.m */; };
 		309FE5441AB08C8A00D09517 /* Geo.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FE5431AB08C8A00D09517 /* Geo.m */; };
+		30A4CD151AB1CB4B00F0890B /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A4CD141AB1CB4B00F0890B /* Account.m */; };
 		30AC89331AAC3036008C9DA5 /* NSDictionary+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AC892B1AAC3036008C9DA5 /* NSDictionary+Json.m */; };
 		73F10A01F2D59599B23CE698 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7972E686E30BF6B819A9DCD /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		122073ACD04A9F1D805D4641 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3032EF581AB1DA0E002DF538 /* KGOperationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGOperationBar.h; sourceTree = "<group>"; };
+		3032EF591AB1DA0E002DF538 /* KGOperationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGOperationBar.m; sourceTree = "<group>"; };
 		305EA5FE1AABF136004C8F4C /* KGRequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGRequestTool.h; sourceTree = "<group>"; };
 		305EA5FF1AABF136004C8F4C /* KGRequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGRequestTool.m; sourceTree = "<group>"; };
 		305EA6051AABFC49004C8F4C /* TabHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabHomeViewController.h; sourceTree = "<group>"; };
@@ -69,14 +72,14 @@
 		307DC6CE1AAB00820012DC15 /* kongguTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kongguTests.m; sourceTree = "<group>"; };
 		307DC6DB1AAB02DB0012DC15 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		307DC6DC1AAB02DB0012DC15 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
-		307DC6E01AAB477D0012DC15 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
-		307DC6E11AAB477D0012DC15 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
 		309FE53C1AB07E9100D09517 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		309FE53D1AB07E9100D09517 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		309FE53F1AB0886C00D09517 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		309FE5401AB0886C00D09517 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		309FE5421AB08C8A00D09517 /* Geo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geo.h; sourceTree = "<group>"; };
 		309FE5431AB08C8A00D09517 /* Geo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geo.m; sourceTree = "<group>"; };
+		30A4CD131AB1CB4B00F0890B /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		30A4CD141AB1CB4B00F0890B /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		30AC892A1AAC3036008C9DA5 /* NSDictionary+Json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Json.h"; sourceTree = "<group>"; };
 		30AC892B1AAC3036008C9DA5 /* NSDictionary+Json.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Json.m"; sourceTree = "<group>"; };
 		B7972E686E30BF6B819A9DCD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +132,8 @@
 				305EA6061AABFC49004C8F4C /* TabHomeViewController.m */,
 				305EA6171AAC1F92004C8F4C /* TabHomeCell.h */,
 				305EA6181AAC1F92004C8F4C /* TabHomeCell.m */,
+				3032EF581AB1DA0E002DF538 /* KGOperationBar.h */,
+				3032EF591AB1DA0E002DF538 /* KGOperationBar.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -234,8 +239,6 @@
 			children = (
 				307DC6DB1AAB02DB0012DC15 /* AccountViewController.h */,
 				307DC6DC1AAB02DB0012DC15 /* AccountViewController.m */,
-				307DC6E01AAB477D0012DC15 /* StartupViewController.h */,
-				307DC6E11AAB477D0012DC15 /* StartupViewController.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -243,6 +246,8 @@
 		30AC891B1AAC2EF3008C9DA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30A4CD131AB1CB4B00F0890B /* Account.h */,
+				30A4CD141AB1CB4B00F0890B /* Account.m */,
 				309FE53C1AB07E9100D09517 /* User.h */,
 				309FE53D1AB07E9100D09517 /* User.m */,
 				309FE53F1AB0886C00D09517 /* Status.h */,
@@ -399,7 +404,8 @@
 				305EA60A1AABFC64004C8F4C /* TabTrendViewController.m in Sources */,
 				305EA6131AAC0DA2004C8F4C /* KGMainViewController.m in Sources */,
 				305EA60D1AABFC72004C8F4C /* TabMessageViewController.m in Sources */,
-				307DC6E21AAB477D0012DC15 /* StartupViewController.m in Sources */,
+				3032EF5A1AB1DA0E002DF538 /* KGOperationBar.m in Sources */,
+				30A4CD151AB1CB4B00F0890B /* Account.m in Sources */,
 				307DC6B81AAB00820012DC15 /* AppDelegate.m in Sources */,
 				307DC6B51AAB00820012DC15 /* main.m in Sources */,
 				307DC6DE1AAB02DB0012DC15 /* AccountViewController.m in Sources */,

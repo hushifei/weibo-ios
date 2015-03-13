@@ -7,26 +7,38 @@
 //
 
 #import "TabHomeCell.h"
-#import "PureLayout.h"
 #import "UIImageView+WebCache.h"
-#import "KIImagePager.h"
+#import "MWPhotoBrowser.h"
+
+#define kMarginTopToSuperview 10.0f
+#define kMarginBottomToSuperview 10.0f
+#define kMarginLeftToSuperview 10.0f
+#define kMarginRightToSuperview 10.0f
+#define kAvatarWidth 41.0f
+#define kAvatarHeight 41.0f
+#define kNameLeftToAvatar 5.0f
+#define kNameHeight 20.0f
+#define kHeadDividingLineHeight 0.5f
+#define kTextTopToDividing  2.0f
 
 @interface TabHomeCell()
 
 //头像
-@property(nonatomic, strong) UIImageView *avatarImageView;
+@property(nonatomic, strong)UIImageView *userAvatar;
 //姓名
-@property(nonatomic, strong) UILabel *userNameLabel;
+@property(nonatomic, strong)UILabel *userName;
 //是否认证
-@property(nonatomic, strong) UIImageView *vertifyImageView;
+@property(nonatomic, strong)UIImageView *vertifyFlag;
 //发送日期
-@property(nonatomic, strong) UITextView *titleLabel;
+@property(nonatomic, strong)UILabel *createTime;
 //微博
-@property(nonatomic, strong) UITextView *weiboTextView;
+@property(nonatomic, strong)UITextView *weiboText;
 //原微博
-@property(nonatomic, strong) UITextView *oriWeiboTextView;
+@property(nonatomic, strong)UITextView *oriWeiboText;
 //微博配图
-@property(nonatomic, strong) KIImagePager *picturesPager;
+@property(nonatomic, strong)MWPhotoBrowser *pictures;
+//分割线
+@property(nonatomic, strong)UIView *headDividingLine;
 
 @property(nonatomic, assign) BOOL didSetupConstarints;
 
@@ -38,81 +50,66 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self.contentView addSubview:self.avatarImageView];
-        //self.titleLabel = [UITextView newAutoLayoutView];
-        //[self.titleLabel setBackgroundColor:[UIColor blueColor]];
-        /*[self.titleLabel setLineBreakMode:NSLineBreakByTruncatingTail];
-        [self.titleLabel setNumberOfLines:1];
-        [self.titleLabel setTextAlignment:NSTextAlignmentLeft];
-        [self.titleLabel setTextColor:[UIColor blackColor]];
-        self.titleLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.1]; // light blue
-        */
-        [self.contentView addSubview:self.weiboTextView];
-        //[self.contentView setNeedsUpdateConstraints];
+        [self setupViews];
+        [self setupConstraints];
     }
     return self;
 }
 
-- (void)updateConstraints
+- (void)setupViews
 {
-    if (!self.didSetupConstarints) {
-        [self.avatarImageView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.contentView withOffset:10];
-        [self.avatarImageView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.contentView withOffset:10];
-        [self.avatarImageView autoSetDimensionsToSize:CGSizeMake(60, 60)];
-        /*[self.weiboTextView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.contentView withOffset:10];
-        [self.weiboTextView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.contentView withOffset:10];*/
-        [self.weiboTextView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.avatarImageView withOffset:10];
-        [self.weiboTextView autoSetDimension:ALDimensionWidth toSize:self.contentView.frame.size.width - 60];
-        [self.weiboTextView autoSetDimension:ALDimensionHeight toSize:80];
-        
-        /*[UIView autoSetPriority:UILayoutPriorityRequired forConstraints:^{
-            [self.titleLabel autoSetContentCompressionResistancePriorityForAxis:ALAxisVertical];
-        }];*/
-        //[self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
-        //[self.titleLabel autoSetDimensionsToSize:CGSizeMake(60, 60)];
-        //[self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:10];
-        //[self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:10];
-        
-
-        self.didSetupConstarints = YES;
-    }
-    [super updateConstraints];
+    self.userAvatar = [UIImageView new];
+    self.userAvatar.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.contentView addSubview:self.userAvatar];
+    
+    self.userName = [UILabel new];
+    self.userName.translatesAutoresizingMaskIntoConstraints = NO;
+    self.userName.font = [UIFont systemFontOfSize:12.0f];
+    [self.contentView addSubview:self.userName];
+    
+    self.weiboText = [UITextView new];
+    self.weiboText.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.weiboText setEditable:NO];
+    [self.weiboText setScrollEnabled:NO];
+    self.weiboText.font = [UIFont systemFontOfSize:12.0f];
+    self.weiboText.contentInset = UIEdgeInsetsMake(-8.0f, -4.0f, 0, 0);
+    
+    [self.contentView addSubview:self.weiboText];
 }
 
-- (void)setWeibo:(Status *)weibo
+- (void)setupConstraints
 {
-    //[self.avatarImageView setProperty:self.avatarImageView.frame backgroundProgresscolor:[UIColor whiteColor] progressColor:[UIColor grayColor] placeholderImage:[UIImage imageNamed:@"tabbar_profile"]];
-    //[self.avatarImageView setImageURL:weibo.user.profileImageUrl];
-    
-    
-    //[self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:weibo.user.profileImageUrl] placeholderImage:[UIImage imageNamed:@"tabbar_profile"]];
-    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:weibo.user.profileLargeImageUrl] placeholderImage:[UIImage imageNamed:@"tabbar_profile"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width/2;
-        self.avatarImageView.clipsToBounds = YES;
-        self.avatarImageView.layer.borderWidth = 2.0f;
-        self.avatarImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    //头像
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userAvatar attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:kMarginTopToSuperview]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userAvatar attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeLeft multiplier:1.0f constant:kMarginLeftToSuperview]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userAvatar attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kAvatarWidth]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userAvatar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kAvatarHeight]];
+    //姓名
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userName attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.userAvatar attribute:NSLayoutAttributeRight multiplier:1.0f constant:kNameLeftToAvatar]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userName attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:kMarginTopToSuperview]];
+    //微博内容
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.weiboText attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.userName attribute:NSLayoutAttributeBottom multiplier:1.0f constant:kTextTopToDividing]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.weiboText attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.userName attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0.0f]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.weiboText attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0f constant:-1.0f *kMarginRightToSuperview]];
+}
+
+- (void)setStatus:(Status *)status
+{
+    [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:status.user.avatarHD] placeholderImage:[UIImage imageNamed:@"tabbar_profile"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width/2;
+        self.userAvatar.clipsToBounds = YES;
+        self.userAvatar.layer.borderWidth = 1.0f;
+        self.userAvatar.layer.borderColor = [UIColor grayColor].CGColor;
     }];
     
-    self.weiboTextView.text = weibo.text;
-    //self.titleLabel.text = @"hhhhh";
+    self.userName.text = status.user.screenName;
     
-    //self.height = CGRectGetMaxY(self.weiboTextView.frame);
-    self.height = 100;
+    self.weiboText.text = status.text;
+    
+    CGFloat weiboTextWidth = self.contentView.frame.size.width - kMarginLeftToSuperview -kAvatarWidth - kNameLeftToAvatar - kMarginRightToSuperview;
+    CGSize textSize=[self.weiboText.text boundingRectWithSize:CGSizeMake(weiboTextWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12.0f]} context:nil].size;
+    CGSize nameTextSize = [self.userName.text sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12.0f]}];
+    self.height = kMarginTopToSuperview + MAX(textSize.height + nameTextSize.height + kTextTopToDividing, kAvatarHeight) + kMarginBottomToSuperview;
 }
 
-- (UIImageView *)avatarImageView
-{
-    if (!_avatarImageView) {
-        _avatarImageView = [UIImageView newAutoLayoutView];
-    }
-    return _avatarImageView;
-}
-
-- (UITextView *)weiboTextView
-{
-    if (!_weiboTextView) {
-        _weiboTextView = [UITextView newAutoLayoutView];
-    }
-    return _weiboTextView;
-}
 @end

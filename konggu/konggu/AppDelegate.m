@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AccountViewController.h"
-#import "StartupViewController.h"
+#import "KGMainViewController.h"
 #import "Account.h"
 
 @interface AppDelegate ()
@@ -26,8 +26,8 @@
     Account *account = [[Account alloc] initWithArchiever];
     if (account && [[NSDate date] compare:account.expiresTime]) {
         //获取登陆用户的信息
-        StartupViewController *startUpViewController = [[StartupViewController alloc] initWithUid:account.uid accessToken:account.accessToken];
-        self.window.rootViewController = startUpViewController;
+        KGMainViewController *mainViewController = [[KGMainViewController alloc] initWithStyle];
+        self.window.rootViewController = mainViewController;
     }
     else{
         self.window.rootViewController = [[AccountViewController alloc] init];

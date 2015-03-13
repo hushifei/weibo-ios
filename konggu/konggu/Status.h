@@ -15,13 +15,13 @@
 @property(nonatomic, assign)long long mid;
 @property(nonatomic, copy)NSString *idStr;
 @property(nonatomic, copy)NSString *text;
-@property(nonatomic, strong)NSArray *originalPic;
-@property(nonatomic, strong)NSArray *bMiddlePic;
-@property(nonatomic, strong)NSArray *thumbnailPic;
+@property(nonatomic, strong)NSArray *originalPics;
+@property(nonatomic, strong)NSArray *bMiddlePics;
+@property(nonatomic, strong)NSArray *thumbnailPics;
 @property(nonatomic, assign)int commentsCount;
 @property(nonatomic, assign)int attitudesCount;
 @property(nonatomic, assign)int repostsCount;
-@property(nonatomic, copy)NSString *createTime;
+@property(nonatomic, assign)time_t createTime;
 @property(nonatomic, assign)BOOL hasFavorited;
 @property(nonatomic, copy)NSString *source;
 @property(nonatomic, strong)User *user;

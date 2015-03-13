@@ -11,9 +11,7 @@
 
 @interface TabHomeCell : UITableViewCell
 
-//微博内容
-@property(nonatomic, strong) Status *weibo;
-//单元格高度
-@property(nonatomic, assign) CGFloat height;
+@property(nonatomic, strong)Status *status;
+@property(nonatomic, assign)double height;
 
 @end

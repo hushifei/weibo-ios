@@ -7,14 +7,13 @@
 //
 
 #import "TabHomeViewController.h"
-#import "PureLayout.h"
 #import "KGRequestTool.h"
 #import "Account.h"
 #import "Status.h"
 #import "TabHomeCell.h"
 #import "NSDictionary+Json.h"
 
-#define LIST_TIMELINE_URL   @"https://api.weibo.com/2/statuses/friends_timeline.json"
+#define kListTimeLineUrl   @"https://api.weibo.com/2/statuses/friends_timeline.json"
 
 @interface TabHomeViewController()
 
@@ -28,32 +27,34 @@
 - (void)loadView
 {
     self.tableView = [UITableView new];
-    [self.tableView setBackgroundColor:[UIColor whiteColor]];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self initDta];
+    [self setupViews];
+    [self setupDatas];
 }
 
-- (void)viewDidLoad
+/*- (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.tableView registerClass:[TabHomeCell class] forCellReuseIdentifier:@"name"];
-    
+    self.tableView.estimatedRowHeight = 400;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 100;
+}*/
+
+- (void)setupViews
+{
+    [self.tableView setBackgroundColor:[UIColor whiteColor]];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
-- (void) initDta
+- (void)setupDatas
 {
     //请求数据
     Account *account = [[Account alloc] initWithArchiever];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"access_token"] = account.accessToken;
-    [KGRequestTool GET:LIST_TIMELINE_URL parameters:param response:@"json" success:^(id responseObject) {
+    [KGRequestTool GET:kListTimeLineUrl parameters:param response:@"json" success:^(id responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *dict = (NSDictionary *)responseObject;
             for (NSDictionary *status in [dict arrayValueForKey:@"statuses"]) {
-                Status *weibo = [[Status alloc] initWithJsonDictionary:status];
-                NSLog(@"weibo:%@", status);
+                Status *weibo = [[Status alloc] initWithDictionary:status];
                 [self.dataArray addObject:weibo];
                 TabHomeCell *cell = [[TabHomeCell alloc] init];
                 [self.cellArray addObject:cell];
@@ -78,9 +79,7 @@
     if (!cell) {
         cell = [[TabHomeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"name"];
     }
-    cell.weibo = [self.dataArray objectAtIndex:indexPath.row];
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
+    cell.status = [self.dataArray objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -92,7 +91,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TabHomeCell *cell = [self.cellArray objectAtIndex:indexPath.row];
-    cell.weibo = [self.dataArray objectAtIndex:indexPath.row];
+    cell.status = [self.dataArray objectAtIndex:indexPath.row];
     return cell.height;
 }
 
