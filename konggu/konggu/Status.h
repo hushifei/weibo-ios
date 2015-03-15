@@ -11,7 +11,7 @@
 
 @interface Status : NSObject
 
-@property(nonatomic, assign)long long id;
+@property(nonatomic, assign)long long tid;
 @property(nonatomic, assign)long long mid;
 @property(nonatomic, copy)NSString *idStr;
 @property(nonatomic, copy)NSString *text;

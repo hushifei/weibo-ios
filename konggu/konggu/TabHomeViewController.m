@@ -12,14 +12,16 @@
 #import "Status.h"
 #import "TabHomeCell.h"
 #import "NSDictionary+Json.h"
+#import "SVPullToRefresh.h"
 
 #define kListTimeLineUrl   @"https://api.weibo.com/2/statuses/friends_timeline.json"
 
 @interface TabHomeViewController(){
     NSMutableArray *_cellArray;
     NSMutableArray *_dataArray;
+    //id __lastId;
 }
-
+@property(nonatomic, assign)long long lastId;
 @end
 
 @implementation TabHomeViewController
@@ -31,17 +33,16 @@
     [self setupDatas];
 }
 
-/*- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.tableView.estimatedRowHeight = 400;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-}*/
-
 - (void)setupViews
 {
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        
+    }];
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        
+    }];
 }
 
 - (void)setupDatas

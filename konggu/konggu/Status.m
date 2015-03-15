@@ -16,7 +16,7 @@
 {
     self = [super init];
     if (self) {
-        self.id = [status longLongValueForKey:@"id"];
+        self.tid = [status longLongValueForKey:@"id"];
         self.mid = [status longLongValueForKey:@"mid"];
         self.idStr = [status stringValueForKey:@"is_str"];
         self.text = [status stringValueForKey:@"text"];
@@ -27,9 +27,9 @@
         for (NSDictionary *thumbnailDict in pics) {
             NSString *thumbnail = [thumbnailDict stringValueForKey:@"thumbnail_pic"];
             NSRange range = [thumbnail rangeOfString:@"/thumbnail/"];
-            [originalPics addObject:[thumbnail stringByReplacingCharactersInRange:range withString:@"large"]];
-            [bmiddlePics addObject:[thumbnail stringByReplacingCharactersInRange:range withString:@"bmiddle"]];
-            [thumbnailPics addObject:[thumbnail stringByReplacingCharactersInRange:range withString:@"thumbnail"]];
+            [originalPics addObject:[thumbnail stringByReplacingCharactersInRange:range withString:@"/large/"]];
+            [bmiddlePics addObject:[thumbnail stringByReplacingCharactersInRange:range withString:@"/bmiddle/"]];
+            [thumbnailPics addObject:[thumbnail stringByReplacingCharactersInRange:range withString:@"/thumbnail/"]];
         }
         self.originalPics = originalPics;
         self.bMiddlePics = bmiddlePics;
