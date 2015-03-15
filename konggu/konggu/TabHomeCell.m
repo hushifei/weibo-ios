@@ -11,15 +11,15 @@
 #import "MWPhotoBrowser.h"
 
 #define kMarginTopToSuperview 10.0f
-#define kMarginBottomToSuperview 10.0f
+#define kMarginBottomToSuperview 0.0f
 #define kMarginLeftToSuperview 10.0f
 #define kMarginRightToSuperview 10.0f
 #define kAvatarWidth 41.0f
 #define kAvatarHeight 41.0f
 #define kNameLeftToAvatar 5.0f
-#define kNameHeight 20.0f
 #define kHeadDividingLineHeight 0.5f
-#define kTextTopToDividing  2.0f
+#define kTextTopToDividing 2.0f
+#define kOriTextToWeibo 2.0f
 
 @interface TabHomeCell()
 
@@ -65,6 +65,8 @@
     self.userName = [UILabel new];
     self.userName.translatesAutoresizingMaskIntoConstraints = NO;
     self.userName.font = [UIFont systemFontOfSize:12.0f];
+    self.userName.backgroundColor = [UIColor clearColor];
+    [self.userName setTextColor:[UIColor orangeColor]];
     [self.contentView addSubview:self.userName];
     
     self.weiboText = [UITextView new];
@@ -72,9 +74,24 @@
     [self.weiboText setEditable:NO];
     [self.weiboText setScrollEnabled:NO];
     self.weiboText.font = [UIFont systemFontOfSize:12.0f];
-    self.weiboText.contentInset = UIEdgeInsetsMake(-8.0f, -4.0f, 0, 0);
-    
+    //[self.weiboText setBackgroundColor:[UIColor orangeColor]];
+    self.weiboText.contentInset = UIEdgeInsetsZero;
+    self.weiboText.textContainerInset = UIEdgeInsetsZero;
+    self.weiboText.textContainer.lineFragmentPadding = 0;
     [self.contentView addSubview:self.weiboText];
+    
+    self.oriWeiboText = [UITextView new];
+    self.oriWeiboText.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.oriWeiboText setEditable:NO];
+    [self.oriWeiboText setScrollEnabled:NO];
+    self.oriWeiboText.font = [UIFont systemFontOfSize:12.0f];
+    [self.oriWeiboText setTextColor:[UIColor grayColor]];
+    //[self.oriWeiboText setBackgroundColor:[UIColor blueColor]];
+    self.oriWeiboText.contentInset = UIEdgeInsetsZero;
+    self.oriWeiboText.textContainerInset = UIEdgeInsetsZero;
+    self.oriWeiboText.textContainer.lineFragmentPadding = 0;
+    [self.contentView addSubview:self.oriWeiboText];
+    
 }
 
 - (void)setupConstraints
@@ -87,29 +104,53 @@
     //姓名
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userName attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.userAvatar attribute:NSLayoutAttributeRight multiplier:1.0f constant:kNameLeftToAvatar]];
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userName attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:kMarginTopToSuperview]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.userName attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.contentView attribute:NSLayoutAttributeWidth multiplier:0.5f constant:-kAvatarWidth]];
+
     //微博内容
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.weiboText attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.userName attribute:NSLayoutAttributeBottom multiplier:1.0f constant:kTextTopToDividing]];
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.weiboText attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.userName attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0.0f]];
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.weiboText attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0f constant:-1.0f *kMarginRightToSuperview]];
+    //转发的微博
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.oriWeiboText attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.weiboText attribute:NSLayoutAttributeLeft multiplier:1.0f constant:0.0f]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.oriWeiboText attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.weiboText attribute:NSLayoutAttributeBottom multiplier:1.0f constant:kOriTextToWeibo]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.oriWeiboText attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0f constant:-1.0f *kMarginRightToSuperview]];
+}
+
+- (void) prepareForReuse
+{
+    self.oriWeiboText.hidden = YES;
 }
 
 - (void)setStatus:(Status *)status
 {
-    [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:status.user.avatarHD] placeholderImage:[UIImage imageNamed:@"tabbar_profile"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width/2;
-        self.userAvatar.clipsToBounds = YES;
-        self.userAvatar.layer.borderWidth = 1.0f;
-        self.userAvatar.layer.borderColor = [UIColor grayColor].CGColor;
-    }];
+    double rightPartHeight;
+    
+    self.userAvatar.backgroundColor = [UIColor clearColor];
+    self.userAvatar.layer.cornerRadius =  kAvatarWidth / 2;
+    self.userAvatar.layer.masksToBounds = YES;
+    self.userAvatar.layer.borderWidth = 1.0f;
+    self.userAvatar.layer.borderColor = [UIColor grayColor].CGColor;
+    [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:status.user.avatarHD] placeholderImage:[UIImage imageNamed:@"tabbar_profile"]];
     
     self.userName.text = status.user.screenName;
+    CGSize nameTextSize = [self.userName.text sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12.0f]}];
+    rightPartHeight += nameTextSize.height;
     
     self.weiboText.text = status.text;
-    
     CGFloat weiboTextWidth = self.contentView.frame.size.width - kMarginLeftToSuperview -kAvatarWidth - kNameLeftToAvatar - kMarginRightToSuperview;
-    CGSize textSize=[self.weiboText.text boundingRectWithSize:CGSizeMake(weiboTextWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12.0f]} context:nil].size;
-    CGSize nameTextSize = [self.userName.text sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12.0f]}];
-    self.height = kMarginTopToSuperview + MAX(textSize.height + nameTextSize.height + kTextTopToDividing, kAvatarHeight) + kMarginBottomToSuperview;
+    CGSize weiboTextSize = [self.weiboText sizeThatFits:CGSizeMake(weiboTextWidth, MAXFLOAT)];
+    rightPartHeight += weiboTextSize.height;
+    if (status.retweetedStatus) {
+        self.oriWeiboText.hidden = NO;
+        self.oriWeiboText.text = [NSString stringWithFormat:@"@%@:%@", status.retweetedStatus.user.screenName, status.retweetedStatus.text];
+        CGSize oriWeiboTextSize = [self.oriWeiboText sizeThatFits:CGSizeMake(weiboTextWidth, MAXFLOAT)];
+        rightPartHeight += kTextTopToDividing + oriWeiboTextSize.height;
+    }
+    else{
+        self.oriWeiboText.hidden = YES;
+    }
+    
+    self.height = kMarginTopToSuperview + MAX(rightPartHeight, kAvatarHeight) + kMarginBottomToSuperview;
 }
 
 @end
